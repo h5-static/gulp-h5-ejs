@@ -1,6 +1,6 @@
 {
   "name": "gulp-h5-ejs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/h5-static/gulp-h5-ejs#readme",
   "dependencies": {
     "gulp-util": "^3.0.4",
-    "h5-ejs": "^1.0.0",
+    "h5-ejs": "^1.0.4",
     "make-array": "^0.1.2",
     "through2": "^0.6.5"
   }

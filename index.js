@@ -13,10 +13,14 @@ gulpH5Ejs.prototype.compile = function(){
 	var self = this;
 
   	var stream = through.obj(function(file, enc, cb) {
-        file.contents = new h5Ejs(file.contents.toString(),self.options);
-        file.path = gutil.replaceExtension(file.path, '.html');
-        this.push(file);
-        return cb();
+        var _self = this;
+        new h5Ejs(file.contents.toString(),self.options,function(fileStream){
+            file.contents = fileStream;
+            file.path = gutil.replaceExtension(file.path, '.html');
+            _self.push(file);
+            cb();
+        });
+       
     });
 
     return stream;
