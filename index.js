@@ -31,7 +31,7 @@ gulpH5Ejs.prototype.replace = function(){
 
   	var stream = through.obj(function(file, enc, cb) {
 
-        file.contents = new Buffer(file.contents.toString().replace(/(<script async.*?<\/script>)(.*?)(<script>facade.*?<\/script>)/,"$2$1$3"));
+        file.contents = new Buffer(file.contents.toString().replace(/(<script combo.*?<\/script>)(.*?)(<script>facade.*?<\/script>)/,"$2$1$3"));
 
         this.push(file);
         return cb();

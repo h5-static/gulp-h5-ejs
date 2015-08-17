@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html  manifest="apply.appcache">
 
 <head>
   <meta charset="utf-8" />
-  <title>Title</title>
+  <title>申请退款</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone=no"/>
   <meta name="format-detection" content="email=no" />
-  <%- CSS("../css/index.css,util-m-confirm/css/style.css") %>
-
+  <%- CSS("m-css-base/css/style.css,util-m-confirm/css/style.css,../../css/apply.css") %>
 </head>
-<body id="loading" style="display:none;">
-  <div id="list" class="J_list">
+<body id="loading" class="body" >
+  <div class="apply-container J_apply" id="apply">
   </div>
-  <%- JS("app-newwallet-static/js/index")%>
+  
+  <%- JS('app-refund-static/entries/apply') %>
 </body>
-
 </html>
