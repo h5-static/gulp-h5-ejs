@@ -21,4 +21,19 @@ gulpH5Ejs.prototype.compile = function(){
 
     return stream;
 }
+
+gulpH5Ejs.prototype.replace = function(){
+	var self = this;
+
+  	var stream = through.obj(function(file, enc, cb) {
+
+        file.contents = new Buffer(file.contents.toString().replace(/(<script async.*?<\/script>)(.*?)(<script>facade.*?<\/script>)/,"$2$1$3"));
+
+        this.push(file);
+        return cb();
+    });
+
+    return stream;
+}
+
 module.exports = gulpH5Ejs
