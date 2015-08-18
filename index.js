@@ -16,7 +16,6 @@ gulpH5Ejs.prototype.compile = function(){
         var _self = this;
         new h5Ejs(file.contents.toString(),self.options,function(fileStream){
             file.contents = fileStream;
-            file.path = gutil.replaceExtension(file.path, '.html');
             _self.push(file);
             cb();
         });
